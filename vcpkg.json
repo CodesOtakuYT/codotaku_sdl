@@ -1,0 +1,15 @@
+{
+  "name": "codotaku-sdl",
+  "version": "1.0.0",
+  "dependencies": [
+    {
+      "name": "sdl3",
+      "features": [
+        "vulkan"
+      ]
+    },
+    "sdl3-image",
+    "sdl3-ttf",
+    "glm"
+  ]
+}
