@@ -109,7 +109,7 @@ SDL_AppResult App::OnRender() const {
     auto commandBuffer = SDL_AcquireGPUCommandBuffer(m_gpuDevice.get());
 
     SDL_GPUTexture *swapchainTexture{};
-    if (!SDL_AcquireGPUSwapchainTexture(commandBuffer, m_window.get(), &swapchainTexture, nullptr, nullptr)) {
+    if (!SDL_WaitAndAcquireGPUSwapchainTexture(commandBuffer, m_window.get(), &swapchainTexture, nullptr, nullptr)) {
         SDL_LogError(APP_LOG_CATEGORY_GENERIC, "Failed to acquire swapchain texture: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
